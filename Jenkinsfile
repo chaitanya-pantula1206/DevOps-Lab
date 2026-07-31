@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                bat 'C:\\Users\\fe\\AppData\\Local\\Python\\bin\\python.exe -m pip install -r requirements.txt'
+                bat 'C:\\Users\\fe\\AppData\\Local\\Python\\bin\\python.exe -m pip install --user -r requirements.txt'
             }
         }
 
