@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/chaitanya-pantula1206/DevOps-Lab.git'
-            }
-        }
         stage('Install Dependencies') {
             steps {
                 bat 'pip install -r requirements.txt'
@@ -18,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'pytest'
+                bat 'pytest --junitxml=test-results.xml'
             }
         }
     }
